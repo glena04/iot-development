@@ -1,0 +1,9 @@
+pyproject.toml
+src/net/__init__.py
+src/net/main.py
+src/net.egg-info/PKG-INFO
+src/net.egg-info/SOURCES.txt
+src/net.egg-info/dependency_links.txt
+src/net.egg-info/entry_points.txt
+src/net.egg-info/requires.txt
+src/net.egg-info/top_level.txt

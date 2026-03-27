@@ -19,7 +19,7 @@ def _get_mac(ip: str):
             parts = line.split()
             if len(parts) >= 3 and parts[0] == ip:
                 mac = parts[2]
-                if mac != "(incomplete)":
+                if mac != "(incomplete)" and mac != "--":
                     return mac
     return None
 
@@ -44,7 +44,7 @@ def _get_vendor(mac_addr: str):
 @app.command()
 def scan(netmask: str = typer.Argument(..., help="Netmask to scan")):
     """Scan the network for active IP addresses."""
-    print(f"Scanning network: {netmask}...")
+    typer.secho(f"Scanning network: {netmask}...", err=True)
     try:
         network = ipaddress.ip_network(netmask, strict=False)
     except ValueError as e:
